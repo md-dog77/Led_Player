@@ -227,35 +227,15 @@
 
 <div class="modal" id="modalSettings">
   <div class="glass-panel modal-content">
-<div style="position: relative; border: 1px solid #ddd; border-radius: 6px; padding: 15px; background: #fff; min-height: 200px; overflow: hidden;">
-
-  <!-- Слой-заглушка с размытием фона -->
-  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-              background: rgba(255, 255, 255, 0.65); 
-              backdrop-filter: blur(10px); 
-              -webkit-backdrop-filter: blur(10px); 
-              display: flex; 
-              align-items: center; 
-              justify-content: center; 
-              z-index: 10; 
-              border-radius: 6px; 
-              font-size: 1.4rem; 
-              color: #2c3e50; 
-              font-weight: 600; 
-              text-shadow: 0 2px 4px rgba(0,0,0,0.05);
-              letter-spacing: 0.5px;">
-    ⛔ Это окно недоступно
-  </div>
-
-  <!-- Оригинальный код (остаётся нетронутым, но перекрыт размытым слоем) -->
-  <h3>Настройки интеграции</h3>
-  <p style="font-size: 0.8em; color: var(--text-muted); margin-bottom: 10px;">Для облачного сохранения настройте поля ниже:</p>
-  <input type="password" id="inputGithubToken" placeholder="GitHub Personal Access Token (PAT)">
-  <input type="text" id="inputGistId" placeholder="GitHub Gist ID (для songs.json)">
-  <input type="text" id="inputGithubRepo" placeholder="Репозиторий для MP3 (например: Юзернейм/название-репо)">
-  <div style="display: flex; gap: 10px; margin-top: 15px;">
-    <button id="btnSaveSettings" class="primary">Сохранить</button>
-    <button class="close-modal">Отмена</button>
+    <h3>Настройки интеграции</h3>
+    <p style="font-size: 0.8em; color: var(--text-muted); margin-bottom: 10px;">Для облачного сохранения настройте поля ниже:</p>
+    <input type="password" id="inputGithubToken" placeholder="GitHub Personal Access Token (PAT)">
+    <input type="text" id="inputGistId" placeholder="GitHub Gist ID (для songs.json)">
+    <input type="text" id="inputGithubRepo" placeholder="Репозиторий для MP3 (например: Юзернейм/название-репо)">
+    <div style="display: flex; gap: 10px; margin-top: 15px;">
+      <button id="btnSaveSettings" class="primary">Сохранить</button>
+      <button class="close-modal">Отмена</button>
+    </div>
   </div>
 </div>
 
@@ -290,7 +270,7 @@
     audio: new Audio(),
     isPlaying: false,
     isMyWave: false,
-    githubToken: localStorage.getItem('githubToken') || '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',
+    githubToken: localStorage.getItem('githubToken') || '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',
     gistId: localStorage.getItem('gistId') || '8fd54ada74ef446aca9a82b4aa4aaac4',
     githubRepo: localStorage.getItem('githubRepo') || 'md-dog77/storage_music_LEDMusic',
     speeds: [0.5, 1, 1.25, 1.5, 2],

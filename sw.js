@@ -48,7 +48,6 @@ self.addEventListener('fetch', (e) => {
     if (e.request.method !== 'GET') return;
     const url = e.request.url;
 
-    // 1. Сначала проверяем, не сохранён ли этот трек или обложка в офлайн-кэше
     if (url.includes('cloudinary.com')) {
         e.respondWith(
             caches.open(AUDIO_CACHE).then(async (cache) => {
@@ -60,7 +59,6 @@ self.addEventListener('fetch', (e) => {
         return;
     }
 
-    // 2. Запросы к Firestore, LRCLIB и иконкам манифеста не перехватываем
     if (
         url.includes('firestore') ||
         url.includes('googleapis') ||
@@ -69,7 +67,6 @@ self.addEventListener('fetch', (e) => {
         url.includes('/assets/')
     ) return;
 
-    // 3. Для оболочки сайта: сначала сеть, при отсутствии интернета — кэш
     e.respondWith(
         fetch(e.request)
             .then((res) => {
